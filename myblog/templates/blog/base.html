@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name= viewport content= width=device-width initial-scale=1 >
+    <link rel="stylesheet" href="{% static '\css\blog\base.css' %}">
+    {% block links %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <!--header menu-->
+    <header>
+       <div class="hearder-content">
+         <div class="logo">
+           <a href="{% url 'blog:home' %}"><h1>ThrowRock<b>Blog</b></h1></a>
+         </div>
+
+         <div class="menu">
+           <nav>
+            <ul>
+              <li><a href="{% url 'blog:home' %}">Inicio</a></li>
+              <li><a href="{% url 'blog:categorias' %}">Categorias</a></li>
+              <li class="menu-selecte" ><a class="text-menu-selecte"  href="#">Blog</a></li>
+              <li><a href="#">Tutoriales</a></li>
+              <li><a href="#">Contacto</a></li>
+            </ul>
+           </nav>
+         </div>
+       </div>
+    </header>
+    <!--cover page-->
+    <div class="container-cover">
+      <div class="container-info-cover">
+        <h1>{% block title_page %}{% endblock%}</h1>
+        <p>{% block title_page_paragraph %}{% endblock%}</p>
+      </div>
+    </div>
+    <!--content page-->
+    <div class="container-content">
+
+    </div>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

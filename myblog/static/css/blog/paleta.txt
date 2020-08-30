@@ -1,0 +1,6 @@
+#079451
+#16E080 verde-claro;
+#4BAF4F verde portada;
+#9900E0 violeta-claro;
+#E09600 naranja;
+#470A64 violeta-oscuro

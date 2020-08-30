@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 25px -22px #000000;
+  z-index: 2;
+}
+
+.hearder-content{
+   max-width: 1000px;
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
+}
+
+.logo{
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: #4BAF4F;
+}
+
+
+.logo h1 b{
+  color: #E09600;
+}
+
+.menu{
+  height: 80px;
+}
+
+.menu nav{
+  height: 100%;
+}
+
+.menu nav ul{
+  height: 100%;
+  display: flex;
+  list-style: none;
+}
+
+.menu nav ul li{
+  height: 100%;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.menu-selecte:before{
+  content : '';
+  width: 100%;
+  height: 4px;
+  background: #E09600;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.menu nav ul li a{
+  color: #079451;
+  font-size: 1.2em;
+  transition: color 300ms;
+}
+
+.menu nav ul li a:hover{
+  color: #E09600;
+  font-size: 1.2em;
+}
+
+.menu .text-menu-selecte{
+  color: #E09600;
+  font-size: 1.2em;
+}
+/* cover page */
+
+.container-cover{
+  width: 100%;
+  height: 500px;
+  position: relative;
+  top: 80px;
+  background-image: url(https://cdn.pixabay.com/photo/2018/04/12/13/01/idea-3313376_960_720.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #4BAF4F;
+}
+
+.container-info-cover{
+  max-width: 800px;
+  height: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.container-info-cover h1{
+  font-size: 4em;
+}
+.container-info-cover p{
+  font-size: 2em;
+  color: #FFFFFF;
+}
