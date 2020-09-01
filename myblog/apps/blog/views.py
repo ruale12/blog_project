@@ -18,7 +18,7 @@ def category(request):
 
     return render(request, "blog/category.html", context);
 
-#------Blog page------#(2)
+#------Blog page------#(1)
 def blog(request):
     context = {};
     posters = Post.objects.filter(type = 'B');
@@ -26,9 +26,15 @@ def blog(request):
 
     return render(request, "blog/blog.html", context);
 
+#------tutorial page------#(1)
 def tutorial(request):
     context = {};
     posters = Post.objects.filter(type = 'T');
     context['posters'] = posters;
 
     return render(request, "blog/tutorial.html", context);
+
+#------contact page------#
+def contact(request):
+    context = {};
+    return render(request, "blog/contact.html", context);
