@@ -38,6 +38,11 @@ class Author(baseModel):
         return "{},{}".format(self.name, self.last_name);
 
 class Post(baseModel):
+    TYPE_POST = (
+        ('B', 'Blog'),
+        ('T', 'Tutorial'),
+    )
+
     name = models.CharField('Titulo', max_length = 90, null = False, blank = False);
     slug = models.CharField('Slug', max_length = 100, null = False, blank = False);
     description = models.CharField('Descripcion', max_length = 110, null = False, blank = False);
@@ -45,7 +50,7 @@ class Post(baseModel):
     image = models.URLField('Imagen', null = True, blank = True);
     author = models.ForeignKey(Author, on_delete = models.CASCADE);
     Category = models.ForeignKey(Category,on_delete = models.CASCADE);
-
+    type = models.CharField('tipo', max_length = 1, null = False, blank = False, choices = TYPE_POST);
 
     class Meta:
         verbose_name = 'Post';

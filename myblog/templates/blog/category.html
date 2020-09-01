@@ -16,6 +16,7 @@
     {% for category in categories %}
       <div class="category-box">
         <a href="#"><h2 class = "category-box-logo">{{category.name.0|title}} </h2><p>{{category.name|title}}</p></a>
+
       </div>
     {% endfor %}
     </div>
@@ -23,4 +24,7 @@
   {% else %}
     <p>NO HAY CATEGORIAS</p>
   {% endif %}
+
 {% endblock %}
+
+{% block var  %}var select_menu = 1; {% endblock %}

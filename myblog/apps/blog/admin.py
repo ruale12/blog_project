@@ -13,7 +13,7 @@ class CategoryResource(resources.ModelResource):
 class AuthorResource(resources.ModelResource):
     class Meta:
         model = Author;
-        
+
 class PostResource(resources.ModelResource):
     class Meta:
         model = Post;
@@ -29,8 +29,8 @@ class AuthorAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     resource_class = AuthorResource;
 
 class PostAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    search_fields = ['name','slug','description','content','image','author','Category'];
-    list_display = ('name','slug','description','content','image','author','Category',);
+    search_fields = ['name','slug','description','content','image','author','Category','type'];
+    list_display = ('name','slug','description','content','image','author','Category','type');
     resource_class = PostResource;
 
 # Register your models here.

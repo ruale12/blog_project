@@ -1,0 +1,31 @@
+{% extends 'blog/base.html'%}
+{% load static %}
+
+{% block links %}<link rel="stylesheet" href="{% static '\css\blog\index.css' %}">{% endblock %}
+
+{% block title %} Tutoriales | TRB {% endblock %}
+
+{% block title_page %}ThrowRock{% endblock%}
+{% block title_page_paragraph %}Blog{% endblock%}
+
+{% block content %}
+  <div class="conteiner-index">
+    {% if posters %}
+
+      {% for post in posters %}
+        <div class="conteiner-post">
+        <a href="#">
+          <h2>{{post.name}}</h2>
+          <h3>{{post.description}}</h3>
+        </a>
+
+        <p>publicado por <a href="#">{{post.author.name}}</a> en {{post.creation_date}} | TIPO: {{ post.get_type_display }}</p>
+        </div>
+      {% endfor %}
+
+    {% else %}
+      <p>NO HAY PUBLICACIONES</p>
+    {% endif %}
+  </div>
+{% endblock %}
+{% block var  %}var select_menu = 2; {% endblock %}

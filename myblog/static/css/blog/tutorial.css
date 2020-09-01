@@ -1,0 +1,21 @@
+.container-cover{
+  width: 100%;
+  height: 500px;
+  position: relative;
+  top: 80px;
+  background-image: url(https://cdn.pixabay.com/photo/2015/02/03/23/41/paper-623167_960_720.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #D7F5D7;
+  box-shadow: 0 4px 50px -22px #000000;
+}
+
+.conteiner-post{
+  position: relative;
+  width: 100%;
+  padding: 2em;
+  max-width: 1000px;
+  margin: auto;
+  top: 80px;
+  left: 0;
+}
