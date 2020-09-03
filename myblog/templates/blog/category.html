@@ -9,20 +9,27 @@
 {% block title_page_paragraph %}{% endblock%}
 
 {% block content %}
+  {% if error %}
+  <div class="category-conteiner-box">
+    <h2 class = "error">{{ error }}</h2>
+  </div>
+  {% else %}
 
-  {% if categories %}
+    {% if categories %}
     <div class="category-conteiner-box">
       <h2>Selecione una categoria: </h2>
-    {% for category in categories %}
+      {% for category in categories %}
       <div class="category-box">
-        <a href="#"><h2 class = "category-box-logo">{{category.name.0|title}} </h2><p>{{category.name|title}}</p></a>
+        <a href="{%url 'blog:categoria_name' category.slug %}"><h2 class = "category-box-logo">{{category.name.0|title}} </h2><p>{{category.name|title}}</p></a>
 
       </div>
-    {% endfor %}
+      {% endfor %}
     </div>
 
-  {% else %}
+    {% else %}
     <p>NO HAY CATEGORIAS</p>
+    {% endif %}
+
   {% endif %}
 
 {% endblock %}

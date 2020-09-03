@@ -31,7 +31,7 @@
        </div>
     </header>
     <!--cover page-->
-    <div class="container-cover">
+    <div class="container-cover" style="{{image}} {{color}}">
       <div class="container-info-cover">
         <h1>{% block title_page %}{% endblock%}</h1>
         <p>{% block title_page_paragraph %}{% endblock%}</p>
@@ -46,41 +46,35 @@
 
 
     <script type="text/javascript">
+
+      function cambioMenuSelectClass(name_li, name_a){
+        link = document.getElementById(name_li);
+        link.classList.add('menu-selecte');
+        a = document.getElementById(name_a);
+        a.classList.add('text-menu-selecte');
+      }
+
       {% block var  %}{% endblock %}
+
       switch (select_menu){
         case 0:
-          link = document.getElementById('opc_0');
-          link.classList.add('menu-selecte');
-          a = document.getElementById('opc_a_0');
-          a.classList.add('text-menu-selecte');
+          cambioMenuSelectClass('opc_0', 'opc_a_0');
         break;
 
         case 1:
-          link = document.getElementById('opc_1');
-          link.classList.add('menu-selecte');
-          a = document.getElementById('opc_a_1');
-          a.classList.add('text-menu-selecte');
+          cambioMenuSelectClass('opc_1', 'opc_a_1');
         break;
 
         case 2:
-          link = document.getElementById('opc_2');
-          link.classList.add('menu-selecte');
-          a = document.getElementById('opc_a_2');
-          a.classList.add('text-menu-selecte');
+          cambioMenuSelectClass('opc_2', 'opc_a_2');
         break;
 
         case 3:
-          link = document.getElementById('opc_3');
-          link.classList.add('menu-selecte');
-          a = document.getElementById('opc_a_3');
-          a.classList.add('text-menu-selecte');
+          cambioMenuSelectClass('opc_3', 'opc_a_3');
         break;
 
         case 4:
-          link = document.getElementById('opc_4');
-          link.classList.add('menu-selecte');
-          a = document.getElementById('opc_a_4');
-          a.classList.add('text-menu-selecte');
+          cambioMenuSelectClass('opc_4', 'opc_a_4');
         break;
 
         default:

@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     #OTHERS APPLICATIONS#
     'import_export',
     'ckeditor',
+    'colorfield',
     #DJANGO APPLICATIONS#
     'django.contrib.admin',
     'django.contrib.auth',

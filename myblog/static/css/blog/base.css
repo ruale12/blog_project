@@ -6,6 +6,8 @@
   font-family: sans-serif;
 }
 
+
+
 header{
   position: fixed;
   top: 0;
@@ -113,7 +115,36 @@ a:link, a:visited, a:active {
 .container-info-cover h1{
   font-size: 4em;
 }
+
 .container-info-cover p{
   font-size: 2em;
   color: #FFFFFF;
+}
+/*  ---POSTERS--- */
+
+.conteiner-post{
+  position: relative;
+  width: 100%;
+  padding: 2em;
+  max-width: 1000px;
+  margin: auto;
+  top: 80px;
+  left: 0;
+  box-shadow: 0 4px 25px -22px #000000;
+
+}
+
+.conteiner-post a h2{
+  display: inline-block;
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+
+.conteiner-post a h2:hover{
+  color: #E09600;
+}
+
+.error{
+  position: relative;
+  font-size: 3em;
 }

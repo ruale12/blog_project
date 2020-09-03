@@ -1,5 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField;
+from colorfield.fields import ColorField;
+
 
 # Create your models here.
 
@@ -17,6 +19,10 @@ class baseModel(models.Model):
 
 class Category(baseModel):
     description = models.CharField('description', max_length = 255, null = False, blank = False);
+    slug = models.CharField('slug', max_length = 100, null = False, blank = False);
+    image = models.URLField('imagen', null = False, blank = False);
+    color = ColorField(default='#FF0000')
+    
     class Meta:
         verbose_name = 'Categoria';
         verbose_name_plural = 'Categorias';
