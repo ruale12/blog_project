@@ -15,7 +15,29 @@
   </div>
   {% else %}
 
-    {% if categories %}
+    {% if categories == None %}
+      {% if posters %}
+
+      {% for post in posters %}
+      <div class="conteiner-post">
+        <a href="{% url 'blog:post' post.slug %}">
+          <h2>{{post.name}}</h2>
+          <h3>{{post.description}}</h3>
+        </a>
+
+        <p>publicado por <a href="#">{{post.author.name}}</a> en {{post.creation_date}} | TIPO: {{ post.get_type_display }}</p>
+        </div>
+        {% endfor %}
+
+      {% else %}
+
+      <div class="category-conteiner-box">
+        <h2 class = "error">NO HAY PUBLICACIONES</h2>
+      </div>
+      {% endif %}
+
+    {% elif categories %}
+
     <div class="category-conteiner-box">
       <h2>Selecione una categoria: </h2>
       {% for category in categories %}
@@ -26,8 +48,10 @@
       {% endfor %}
     </div>
 
-    {% else %}
-    <p>NO HAY CATEGORIAS</p>
+    {% else  %}
+    <div class="category-conteiner-box">
+      <h2 class = "error">NO HAY CATEGORIAS</h2>
+    </div>
     {% endif %}
 
   {% endif %}

@@ -11,20 +11,19 @@
 {% block content %}
   <div class="conteiner-index">
     {% if posters %}
-
       {% for post in posters %}
         <div class="conteiner-post">
         <a href="#">
           <h2>{{post.name}}</h2>
           <h3>{{post.description}}</h3>
         </a>
-
         <p>publicado por <a href="#">{{post.author.name}}</a> en {{post.creation_date}} | TIPO: {{ post.get_type_display }}</p>
         </div>
       {% endfor %}
-
     {% else %}
-      <p>NO HAY PUBLICACIONES</p>
+    <div class="conteiner-post">
+      <h2 class = "error">NO HAY PUBLICACIONES</h2>
+    </div>
     {% endif %}
   </div>
 {% endblock %}

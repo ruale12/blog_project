@@ -1,0 +1,29 @@
+{% extends 'blog/base.html'%}
+{% load static %}
+
+{% block links %}<link rel="stylesheet" href="{% static '\css\blog\post.css' %}">{% endblock %}
+
+{% block title %} {{post.name}} | TRB {% endblock %}
+
+{% block title_page %}{% endblock%}
+{% block title_page_paragraph %}{% endblock%}
+
+{% block content %}
+  <div class="conteiner-index">
+    {% if post %}
+        <div class="conteiner-post">
+        <h2>{{post.name}}</h2>
+        <div class="">
+        {{post.content| safe }}
+        </div>
+        <p>publicado por <a href="#">{{post.author.name}}</a> en {{post.creation_date}} | TIPO: {{ post.get_type_display }}</p>
+        </div>
+
+    {% else %}
+    <div class="category-conteiner-box">
+      <h2 class = "error">{{ error }}</h2>
+    </div>
+    {% endif %}
+  </div>
+{% endblock %}
+{% block var  %}var select_menu = 3; {% endblock %}

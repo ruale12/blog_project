@@ -4,6 +4,16 @@ from colorfield.fields import ColorField;
 
 
 # Create your models here.
+class ColorAndImage(models.Model):
+    image = models.URLField('Imagen', null = True, blank = True, default = None);
+    color = ColorField('color', default='#FFFFFF', null = True, blank = True);
+
+    class Meta:
+        abstract = True;
+
+    def __str__(self):
+        return self.color;
+
 
 class baseModel(models.Model):
     id = models.AutoField('Index', primary_key = True);
@@ -17,12 +27,10 @@ class baseModel(models.Model):
     def __str__(self):
         return self.name;
 
-class Category(baseModel):
+class Category(baseModel, ColorAndImage):
     description = models.CharField('description', max_length = 255, null = False, blank = False);
     slug = models.CharField('slug', max_length = 100, null = False, blank = False);
-    image = models.URLField('imagen', null = False, blank = False);
-    color = ColorField(default='#FF0000')
-    
+
     class Meta:
         verbose_name = 'Categoria';
         verbose_name_plural = 'Categorias';
@@ -43,7 +51,7 @@ class Author(baseModel):
     def __str__(self):
         return "{},{}".format(self.name, self.last_name);
 
-class Post(baseModel):
+class Post(baseModel, ColorAndImage):
     TYPE_POST = (
         ('B', 'Blog'),
         ('T', 'Tutorial'),
@@ -53,9 +61,8 @@ class Post(baseModel):
     slug = models.CharField('Slug', max_length = 100, null = False, blank = False);
     description = models.CharField('Descripcion', max_length = 110, null = False, blank = False);
     content = RichTextField('contenido');
-    image = models.URLField('Imagen', null = True, blank = True);
     author = models.ForeignKey(Author, on_delete = models.CASCADE);
-    Category = models.ForeignKey(Category,on_delete = models.CASCADE);
+    category = models.ForeignKey(Category,on_delete = models.CASCADE);
     type = models.CharField('tipo', max_length = 1, null = False, blank = False, choices = TYPE_POST);
 
     class Meta:

@@ -14,7 +14,7 @@
 
       {% for post in posters %}
         <div class="conteiner-post">
-        <a href="#">
+        <a href="{% url 'blog:post' post.slug %}">
           <h2>{{post.name}}</h2>
           <h3>{{post.description}}</h3>
         </a>
@@ -24,7 +24,9 @@
       {% endfor %}
 
     {% else %}
-      <p>NO HAY PUBLICACIONES</p>
+    <div class="conteiner-post">
+      <h2 class = "error">NO HAY PUBLICACIONES</h2>
+    </div>
     {% endif %}
   </div>
 {% endblock %}

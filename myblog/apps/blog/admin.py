@@ -29,8 +29,8 @@ class AuthorAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     resource_class = AuthorResource;
 
 class PostAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    search_fields = ['name','slug','description','content','image','author','Category','type'];
-    list_display = ('name','slug','description','content','image','author','Category','type');
+    search_fields = ['name','slug','description','content','image','author','category','type'];
+    list_display = ('name','slug','description','content','image','author','category','type','color');
     resource_class = PostResource;
 
 # Register your models here.
