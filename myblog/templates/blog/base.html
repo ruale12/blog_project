@@ -16,6 +16,7 @@
          <div class="logo">
            <a href="{% url 'blog:home' %}"><h1>ThrowRock<b>Blog</b></h1></a>
          </div>
+
          <div class="menu">
            <nav>
             <ul>
@@ -27,22 +28,17 @@
             </ul>
            </nav>
          </div>
-       </div>
+
+         </div>
+
     </header>
 
     <!--cover page-->
     <div class="container-cover" style="{{image}} {{color}}">
 
       <div class="container-info-cover">
-        <div class="search-bar">
-          <form  method="get">
-            <div class="">
-                  <input type="search" name="buscar" value="buscar">
-            </div>
-          </form>
-        </div>
         <h1>{% block title_page %}{% endblock%}</h1>
-        <p>{% block title_page_paragraph %}{% endblock%}</p>
+        {% block title_page_paragraph %}{% endblock%}
       </div>
     </div>
     <!--content page-->

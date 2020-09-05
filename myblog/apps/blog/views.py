@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404;
+from django.db.models import Q;
 from django.core.exceptions import ObjectDoesNotExist;
 from .models import Category; #(2),
 from .models import Post; #(1),
@@ -7,8 +8,15 @@ from .models import Post; #(1),
 #------Main page------#(1)
 def index(request):
     context = {};
+    # print(request.GET);
+    queryset = request.GET.get('search');
     posters = Post.objects.filter(state = True)[::-1]; #this form flips the list;
+
+    if queryset:
+        posters = Post.objects.filter(Q(name__icontains = queryset) | Q(description__icontains = queryset), state = True ).distinct();
+
     context['posters'] = posters;
+
     return render(request, "blog/index.html", context);
 
 #------category page------#(2),(1)
